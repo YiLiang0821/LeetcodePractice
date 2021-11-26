@@ -1,1 +1,3 @@
-print('switch branch')
+strr = "aaaaa"
+target = "bba"
+print(strr.find(target))
