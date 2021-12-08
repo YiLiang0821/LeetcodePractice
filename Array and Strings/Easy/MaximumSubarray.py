@@ -1,6 +1,6 @@
 #53
 # largest sum = total - smallest sum
-def maxSubArray(nums):
+def maxSubArray2(nums):
     totalSum = 0
     minSum = 0
     maxSum = float('-inf')  #"-無限大" 的用法
@@ -13,7 +13,7 @@ def maxSubArray(nums):
             minSum = totalSum
     return maxSum
 # if current item is bigger than post-sumArray, then can discard post-sumArray
-def maxSubArray2(nums):
+def maxSubArray(nums):
     if not nums:
         return 0
     currentSum = nums[0]
@@ -26,5 +26,5 @@ def maxSubArray2(nums):
 
 
 
-nums = [-2]
+nums = [-2,1,-3,4,-1,2,1,-5,4]
 print(maxSubArray(nums))
