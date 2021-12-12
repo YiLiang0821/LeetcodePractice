@@ -6,3 +6,22 @@ class ListNode:
         self.next = next
 class Solution:
     def oddEvenList(self, head: ListNode) -> ListNode:
+        if not head:
+            return head
+        odd = head
+        even = head.next
+        evenList = even
+        
+        while(even and even.next) :
+            odd.next = even.next
+            odd = odd.next
+            
+            even.next = odd.next
+            even = even.next
+        odd.next = evenList
+        return head
+'''
+TC is O(n) one loop
+SC is O(1), create three pointers
+'''
+
