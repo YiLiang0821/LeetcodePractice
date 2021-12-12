@@ -1,8 +1,10 @@
+#15
 def threeSum(nums):
     answer = []
-    nums = sorted(nums)
+    nums.sort()
 
     for i, item in enumerate(nums):
+        # same as previous one, skip
         if i > 0 and nums[i-1] == item:
             continue
         l = i + 1
