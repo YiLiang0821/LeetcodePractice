@@ -1,3 +1,4 @@
+#coding=utf-8
 #53
 # largest sum = total - smallest sum
 def maxSubArray2(nums):
@@ -26,5 +27,5 @@ def maxSubArray(nums):
 
 
 
-nums = [-2,1,-3,4,-1,2,1,-5,4]
+nums = [1,2,-6,3,4,5]
 print(maxSubArray(nums))
