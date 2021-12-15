@@ -8,11 +8,13 @@ def isPali(s, l, r):
     return True
 
 def backTrack(ans, partition, s, index):
+    # end case, index out of bound
     if index >= len(s):
         ans.append(partition[:])
         return
 
     for j in range(index, len(s)):
+        #[0:0](a), [0:1](aa), [0:2](aab)
         if isPali(s, index, j):
             partition.append(s[index: j+1])
             backTrack(ans, partition, s, j + 1)
