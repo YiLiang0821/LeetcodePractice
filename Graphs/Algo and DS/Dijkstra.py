@@ -24,7 +24,7 @@ def dijkstra(graph, start):
     parent = {start: None} # record father node
     distance = init_distance(graph, start)
 
-    while (len(pqueue) > 0):
+    while (len(pqueue)):
         pair = heapq.heappop(pqueue)
         dis = pair[0]
         vertex = pair[1]
@@ -43,13 +43,15 @@ def dijkstra(graph, start):
 
 parent, distance = dijkstra(graph, 'A')
 print(parent)
-print(distance)
+print('node A to other nodes distance: \n {}'.format(distance))
 
 print('from A to F distans:', distance['F'])
 s = 'F'
 while(parent[s] != None):
-    print(parent[s])
+    print(parent[s], end=' ')
     s = parent[s]
 '''
+Used to find the shortest path between 2 nodes in a graph
 pls refer this video: https://www.youtube.com/watch?v=9wV1VxlfBlI
+TC is O(E log V)
 '''
