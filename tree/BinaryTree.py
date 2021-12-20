@@ -13,16 +13,6 @@ def insertNode(node, nodeData):
         node.right = insertNode(node.right, nodeData)
     return node
 
-
-def printTree(node):
-    #preorder left middle right
-    if node.left:
-        printTree(node.left)
-        
-    print(node.data) #inorder
-    if node.right:
-        printTree(node.right) 
-     #postorder
 def minValueNode(node): #left tree will has the smallest value
     current = node
     while(current.left is not None):
@@ -71,6 +61,34 @@ def searchTree(node, targerValue):
             node = node.right
         n += 1
 
+def printTree(node, mode):
+    # left root right
+    if mode == 'inorder':
+        if node is not None:
+            printTree(node.left,mode)
+            print(node.data)
+            printTree(node.right,mode)
+    # root left right
+    elif mode == 'preorder':
+        if node is not None:
+            print(node.data)
+            printTree(node.left,mode)
+            printTree(node.right,mode)
+    # left right root 
+    elif mode == 'postorder':
+        if node is not None:
+            printTree(node.left,mode)
+            printTree(node.right,mode)
+            print(node.data)
+
+#       7
+#     /  \
+#     4   13
+#   /  \
+#   1
+#     \
+#      2
+
 
 
 
@@ -81,21 +99,18 @@ root = insertNode(root, 1)
 root = insertNode(root, 5)
 root = insertNode(root, 2)
 root = insertNode(root, 13)
-root = insertNode(root, 8)
-root = insertNode(root, 11)
-root = insertNode(root, 9)
-root = insertNode(root, 15)
+printTree(root,'preorder')
 
-print('the tree:  ')
-printTree(root)
-tmp = root.left
-print('left tree: ')
-printTree(tmp)
-tmp = root.right
-print('right tree: ')
-printTree(tmp)
-print('-----delete-----')
-root = deleteNode(root,4)
-printTree(root)
-print('-----search-----')
-print(searchTree(root, 9))
+# print('the tree:  ')
+# printTree(root)
+# tmp = root.left
+# print('left tree: ')
+# printTree(tmp)
+# tmp = root.right
+# print('right tree: ')
+# printTree(tmp)
+# print('-----delete-----')
+# root = deleteNode(root,4)
+# printTree(root)
+# print('-----search-----')
+# print(searchTree(root, 9))

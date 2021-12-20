@@ -1,0 +1,18 @@
+A tree is a connected acyclic undirected graph
+* connected: given any two nodes there is a path between them
+* acyclic: a graph doesn't have cycle
+* undirected: edges can go both way
+
+m-ary trees: every internal vertex of the tree has no more than m children
+- binary tree: every nodes that has at most 2 children
+
+Terminology:
+* Path: sequence of nodes connected together in a tree
+* Parent: a node above another node connected by it's edge
+* Child: a node below another node connected by its edge
+* Root: the top of tree, only one in the tree, root has no parent
+* Leaf node: nodes that no has children
+* Tree height: the number of edges on the longest downward path between the root and a leaf
+
+# Balanced tree:
+- the depth of the two subtrees of every nodes never differ by more than 1
