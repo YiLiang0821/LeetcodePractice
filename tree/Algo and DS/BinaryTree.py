@@ -22,11 +22,10 @@ def minValueNode(node): #left tree will has the smallest value
 def deleteNode(node, key):
     if node is None :  #往下找 直到找不到 往回退
         return node
-
     if key < node.data: # find left tree
         node.left = deleteNode(node.left, key)
     elif key > node.data:
-        node,right = deleteNode(node.right, key)
+        node.right = deleteNode(node.right, key)
 
     # the key is same as node'root, this is the node need to delete
     else:
@@ -38,28 +37,16 @@ def deleteNode(node, key):
             temp = node.left
             node.data = None
             return temp
-        else:               #right and left both have child
+        # right and left both have child
+        # take right subtree's min to be the new node
+        else:               
             temp = minValueNode(node.right) #can be the min value of right tree
                                             #or the max value of left tree
-            node.data = temp.data #copy to this node (since it was removed)
-            
-            #等於說要再去刪除node.right, 因為node.right的root 被拿走了
+            #copy to this node (since it was removed)
+            node.data = temp.data 
+            # subtree's(node.right) min(temp.data) is deleted
             node.right = deleteNode(node.right, temp.data)
     return node
-
-def searchTree(node, targerValue):
-    if node is None:
-        return ('empty tree')
-    
-    n = 1 #visit root need to count to 1
-    while True:
-        if node.data == targerValue:
-            return ('search {0} times'.format(n))
-        if targerValue < node.data: #search left
-            node = node.left
-        elif targerValue > node.data:
-            node = node.right
-        n += 1
 
 def printTree(node, mode):
     # left root right
