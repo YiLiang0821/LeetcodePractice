@@ -21,7 +21,7 @@ def networkDelayTime(times, n, k):
     while(pqueue):
         cur_dis, vertex = heapq.heappop(pqueue)
         seen.add(vertex)
-        # all visited
+        #  all the n nodes to receive the signal
         if len(seen) == n:
             return cur_dis
         # check distance of vertex's neighbor
