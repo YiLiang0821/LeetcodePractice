@@ -1,4 +1,5 @@
 #881
+# key is sorted the people first
 def BoatsToSavePeople(people, limit):
     #people.sort()
     people = sorted(people)

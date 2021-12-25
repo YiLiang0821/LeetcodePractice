@@ -5,7 +5,7 @@ def isPalindroms(s):
     for i in range( n//2 + 1):  #+1 since index start from 0
         if s[i] != s[n - i -1]:
             return False        # not palindrom then stop
-        return True
+    return True
 
 # sbustring s[l ~ r]
 def subIsPalindroms(s, l, r):

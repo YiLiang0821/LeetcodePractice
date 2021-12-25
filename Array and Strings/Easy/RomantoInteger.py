@@ -5,6 +5,7 @@ def RomantoInteger(s):
     for i in range(len(s)):
         tmpV = mapValue[s[i]]
         if i != 0 and mapValue[s[i - 1]] < mapValue[s[i]]:
+            # - 2 *() 需要多減前一次加進去result的 CM = 100(C) + 1000(M) -> 900(CM)
             tmpV = tmpV - 2 * mapValue[s[i - 1]]
         result += tmpV
     return result

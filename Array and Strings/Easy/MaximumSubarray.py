@@ -20,8 +20,8 @@ def maxSubArray(nums):
     currentSum = nums[0]
     maxSum = nums[0]
     for i in nums[1:]:
-        currentSum = max(i, currentSum + i)
-        maxSum = max(maxSum, currentSum)
+        currentSum = max(i, currentSum + i) # check subarray whether continue to accumulate
+        maxSum = max(maxSum, currentSum)    # pick max subarray
     return maxSum
 
 
