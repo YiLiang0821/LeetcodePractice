@@ -2,10 +2,10 @@ def BFS(graph, start):
     seen = set()
     queue = []
     queue.append(start)
-    seen.add(start) # exist in q
-
+    
     while (len(queue)):
         vertex = queue.pop(0)
+        seen.add(vertex) # exist in q
         print(vertex, end=' ')
         for node in graph[vertex]:
             if node not in seen:

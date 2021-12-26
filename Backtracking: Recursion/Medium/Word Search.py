@@ -15,6 +15,8 @@ def wordSearch(board, word, x, y, n):
     board[x][y] = 0
     # search neighbor
     for xx, yy in [(x+1, y), (x-1, y), (x, y+1), (x, y-1)]:
+        # if xx < 0 or yy < 0 or xx > len(board) or yy > len(board[0]):
+        #         continue
         if wordSearch(board, word, xx, yy, n+1):
             return True
     #Resume travel this time

@@ -1,4 +1,3 @@
-import re
-s = "A man, a plan, a canal: Panama"
-s= re.sub("[^0-9a-zA-Z]+", '',s)
-print(s)
+i = 3
+for j in range(2 * i, 25, i):
+    print(j)

@@ -6,7 +6,7 @@ def majorityElement(nums):
             m[i] += 1
         else:
             m[i] = 1
-    return max(m, key=m.get)
+    return max(m, key=m.get) #key=func
 
 nums = [2,2,1,1,1,2,2]
 print(majorityElement(nums))

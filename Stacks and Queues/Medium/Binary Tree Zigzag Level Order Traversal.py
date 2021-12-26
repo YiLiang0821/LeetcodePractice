@@ -24,7 +24,7 @@ def zigzagLevelOrder(root):
                     q.appendleft(node.left)
                 
             temp.append(node.val)
-        if len(temp) > 0:
+        if len(temp) > 0: #not necessary if-statement
             ans.append(temp[:])
             temp.clear()
         tag += 1

@@ -1,21 +1,19 @@
 #454
+from collections import defaultdict
 def fourSumCount(nums1, nums2, nums3, nums4):
-    m = {}
-    answer = 0
-
-    for i in range(len(nums1)):
-        for j in range(len(nums2)):
-            if (nums1[i] + nums2[j]) not in m :
-                m[nums1[i] + nums2[j]] = 0
-            m[nums1[i] + nums2[j]] += 1
+    m = defaultdict(int)
+    ans = 0
     
-    for x in range(len(nums3)):
-        for y in range(len(nums4)):
-            target = -(nums3[x] + nums4[y])
-            if target in m:
-                answer += m[target]
-
-    return answer
+    for i in nums1:
+        for j in nums2:
+            diff = 0 - i - j
+            m[diff] += 1
+    for x in nums3:
+        for y in nums4:
+            total = x + y
+            if total in m:
+                ans += m[total]
+    return ans
 
 nums1 = [1,2] 
 nums2 = [-2,-1] 

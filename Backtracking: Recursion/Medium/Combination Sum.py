@@ -1,5 +1,7 @@
 #39
+# basic search all combination
 def backTrack(candidates, target, ans, cur, index, sumCurr):
+     #stop condition: sum(cur) == target or sum(cur) > target
     if sumCurr == target:
         ans.append(cur[:])
 
@@ -10,7 +12,7 @@ def backTrack(candidates, target, ans, cur, index, sumCurr):
             backTrack(candidates, target, ans, cur, i, sumCurr+ candidates[i])
             #iterate candidates[i]
             #[2] -> [2,2],[2,3],[2,6]
-            cur.pop()
+            cur.pop() # pop out the candidates[i] which push previous and try next one
     
     return 
 def combinationSum(candidates, target):

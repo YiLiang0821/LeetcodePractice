@@ -1,12 +1,11 @@
 #49
+from collections import defaultdict
 def groupAnagrams(strs):
-    anagrams = {}
+    anagrams = defaultdict(list)
     output =[]
 
     for i in strs:
         item = ''.join(sorted(i)) # list can't be hashed
-        if item not in anagrams:
-            anagrams[item] = []
         anagrams[item].append(i)
     for j in anagrams.values():
         output.append(j)

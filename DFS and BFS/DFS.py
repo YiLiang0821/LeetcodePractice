@@ -1,9 +1,9 @@
 def DFS(graph, start):
+    seen = set()
     stack = []
     stack.append(start)
-    seen = set()
 
-    while (len(stack)):
+    while (stack):
         vertex = stack.pop()
         seen.add(vertex) # exist in q
         for node in graph[vertex]:
