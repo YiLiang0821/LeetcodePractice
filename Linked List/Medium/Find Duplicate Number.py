@@ -16,10 +16,10 @@ def findDuplicat(nums):
             break
         # set fast to the begin point 0
         # this time both walk same distance
-        fast = 0
-        while fast != slow:
-            slow = nums[slow]
-            fast = nums[fast]
+    fast = 0
+    while fast != slow:
+        slow = nums[slow]
+        fast = nums[fast]
     return slow
 
 '''

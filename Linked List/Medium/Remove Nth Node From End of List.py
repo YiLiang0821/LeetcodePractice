@@ -18,6 +18,7 @@ class Solution:
         L.next = L.next.next
         return startNode.next
 '''
+L 和 R 相差n , 當 R == False 時，L 會在要移除點的前一個
 TC is O(2*n) = O(n)
 SC is O(1) only two pointers
 '''
